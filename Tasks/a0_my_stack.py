@@ -14,7 +14,7 @@ def push(elem: Any) -> None:
     """
     global my_litle_stack
     my_litle_stack.append(elem)
-    print(f"Добавлен элемент {elem}")
+    # print(f"Добавлен элемент {elem}")
     return None
 
 
