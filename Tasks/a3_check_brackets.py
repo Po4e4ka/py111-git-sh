@@ -6,20 +6,16 @@ def check_brackets(brackets_row: str) -> bool:
     :param brackets_row: input string to be checked
     :return: True if valid, False otherwise
     """
-    count_0, count_1 = 0, 0
-    for i in brackets_row:  # Оргиназовать стек из строки
-        my_stack.push(i)
-    for i in range(len(my_stack.my_litle_stack)):
-        a = my_stack.pop()
-        if a == ')':
-            count_1 += 1
-        if a == '(':
-            count_0 += 1
-            if count_0 > count_1:
+    my_stack.clear()
+    for i in brackets_row:
+        if i == '(':
+            my_stack.push('')
+        elif i == ')':
+            if my_stack.pop() is None:
                 return False
-    print(count_1,count_0)
-    if count_1 == count_0:
-        return True
-    else:
+    if len(my_stack.my_litle_stack) > 0:
         return False
+    return True
+
+
 
