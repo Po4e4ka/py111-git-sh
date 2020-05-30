@@ -2,7 +2,6 @@
 This module implements some functions based on linear search algo
 """
 from typing import Sequence
-import random
 
 def linar_search(arr, elem):
     for i in range(len(arr)):
