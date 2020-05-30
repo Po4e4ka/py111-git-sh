@@ -2,7 +2,7 @@
 Taylor series
 """
 from typing import Union
-
+import Tasks.c1_fact as fa
 
 def ex(x: Union[int, float]) -> float:
     """
@@ -11,9 +11,10 @@ def ex(x: Union[int, float]) -> float:
     :param x: x value
     :return: e^x value
     """
-    print(x)
-    return 0
-
+    result = 1
+    for i in range(1,100):
+        result += (x**i)/(fa.factorial_iterative(i))
+    return result
 
 def sinx(x: Union[int, float]) -> float:
     """
@@ -22,5 +23,12 @@ def sinx(x: Union[int, float]) -> float:
     :param x: x value
     :return: sin(x) value
     """
-    print(x)
-    return 0
+    result = x
+    a = -1
+    for i in range(3,10,2):
+        print(i)
+        s = (x**i)/(fa.factorial_iterative(i))
+        result += s*a
+        print(result)
+        a = -a
+    return result
