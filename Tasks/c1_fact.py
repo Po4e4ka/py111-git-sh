@@ -5,7 +5,6 @@ def factorial_recursive(n: int) -> int:
     :return: factorial of n
     """
 
-    print(n)
     if n < 1:
         raise ValueError('n < 0')
     if n == 1:
