@@ -1,7 +1,6 @@
 from typing import Hashable, List
 import networkx as nx
-import Tasks.a1_my_queue as queue
-import matplotlib.pyplot as plt
+import Tasks.a0_my_stack as queue
 
 
 def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
@@ -13,16 +12,16 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
     :return: list of nodes in the visited order
     """
     visible = [start_node]
-    queue.enqueue(start_node)
+    queue.push(start_node)
     while True:
-        versh = queue.dequeue()
+        versh = queue.pop()
         if versh is None:
             break
         list1 = g.neighbors(versh)
         for i in list1:
             if visible.count(i) == 0:
                 visible.append(i)
-                queue.enqueue(i)
+                queue.push(i)
 
     return visible
 
