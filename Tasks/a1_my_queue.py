@@ -14,7 +14,6 @@ def enqueue(elem: Any) -> None:
     """
     global my_litle_queue
     my_litle_queue.append(elem)
-    print(elem)
     return None
 
 
