@@ -4,7 +4,20 @@ or with dicts (smth like {'key': 0, value: 123, 'left': {...}, 'right':{...}})
 """
 
 from typing import Any, Optional, Tuple
-# import networkx as nx
+
+my_little_tree = None
+
+def reg_insert(local_tree, key, value):
+    if local_tree is None:
+        return {'key': key,
+                'value': value,
+                'l': None,
+                'r': None}
+    elif key < local_tree['key']:
+        local_tree['l'] = reg_insert(local_tree['l'], key, value)
+    elif key > local_tree['key']:
+        local_tree['r'] = reg_insert(local_tree['r'], key, value)
+    return local_tree
 
 
 def insert(key: int, value: Any) -> None:
@@ -15,8 +28,8 @@ def insert(key: int, value: Any) -> None:
     :param value: value associated with key
     :return: None
     """
-    print(key, value)
-    return None
+    global my_little_tree
+    my_little_tree = reg_insert(my_little_tree,key,value)
 
 
 def remove(key: int) -> Optional[Tuple[int, Any]]:
@@ -48,3 +61,5 @@ def clear() -> None:
     :return: None
     """
     return None
+
+
