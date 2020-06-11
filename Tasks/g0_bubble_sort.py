@@ -10,10 +10,8 @@ def sort(container: List[int]) -> List[int]:
     """
     a = len(container)
     for i in range(a-2):
-        for j in range(1, a - i- 1):
+        for j in range(1, a - i):
             if container[j] < container[j-1]:
                 container[j], container[j-1] = container[j-1], container[j]
 
     return container
-
-
