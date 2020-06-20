@@ -34,7 +34,6 @@ def kmp_algo(inp_string: str, substr: str) -> Optional[int]:
     :param substr: substr to be found in inp_string (needle)
     :return: index where first occurrence of substr in inp_string started or None if not found
     """
-    print(inp_string, substr)
     j = 0
     start = -1
     for i in range(len(inp_string)):
@@ -42,7 +41,6 @@ def kmp_algo(inp_string: str, substr: str) -> Optional[int]:
             if start == -1:
                 start = i
             if j == len(substr)-1:
-                print(start)
                 return start
             j += 1
         elif j <= 0:
@@ -51,5 +49,3 @@ def kmp_algo(inp_string: str, substr: str) -> Optional[int]:
         elif j > 0:
             start = -1
             j = _prefix_fun(inp_string)[j-1]
-if __name__ == '__main__':
-    print(kmp_algo('ATAATA', 'AA'))
