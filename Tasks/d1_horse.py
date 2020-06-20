@@ -26,6 +26,4 @@ def calculate_paths(shape: (int, int), point: (int, int)) -> int:
                     result_mass[l][i] +=                result_mass[l-1][i+2]*2
                 if l - 1 > 0 and i + 1 < shape[1] and   result_mass[l-2][i+1] > 0:
                     result_mass[l][i] +=                result_mass[l-2][i+1]*2
-
     return result_mass[point[0]][point[1]]
-
