@@ -26,6 +26,3 @@ def fib_iterative(n: int) -> int:
         result[0], result[1] = result[1], result[0] + result[1]
     return result[1]
 
-if __name__ == "__main__":
-    print(fib_iterative(6))
-    print(fib_recursive(6))
