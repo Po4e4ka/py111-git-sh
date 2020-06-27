@@ -8,8 +8,8 @@ def _prefix_fun(prefix_str: str) -> List[int]:
     :param prefix_str: dubstring for prefix function
     :return: prefix values table
     """
+    # TODO Сделать более упрощенно
     result = []
-
     a = len(prefix_str)
     for i in range(a):
         pref = prefix_str[:i+1]
@@ -21,8 +21,6 @@ def _prefix_fun(prefix_str: str) -> List[int]:
                 break
         else:
             result.append(0)
-
-
     return result
 
 
